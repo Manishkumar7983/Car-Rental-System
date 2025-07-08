@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { assets, menuLinks } from '../assets/assets';
-import { Link, useLocation } from 'react-router-dom';
-const Navbar = () => {
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+const Navbar = (setshowlogin) => {
 
   const location = useLocation();
   const[open,setOpen]=useState(false)
+  const navigate=useNavigate()
   return (
     <div className={`flex items-center justify-between px-6 md:px-16 lg:px-24 x1:px-32 py-4 text-black border-b border-borderColor relative transition-all ${location.pathname=="/" && "bg-light"}`}>
        <Link to="/">
@@ -25,12 +26,16 @@ const Navbar = () => {
       </div>
 
       <div className='flex gap-7'>
-        <button className='cursor-pointer'>Dashboard</button>
-        <button type="button" class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2 text-center me-2 mb-2 mt-1.5">Login</button>
+        <button  onClick={()=>navigate('/owner')} className='cursor-pointer'>Dashboard</button>
+        <button  onClick={()=>setshowlogin(true)} type="button" class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2 text-center me-2 mb-2 mt-1.5">Login</button>
       </div>
 
-
     </div>
+     
+     <button className='sm:hidden cursor-pointer' aria-label="menu" onClick={()=>setOpen(!open)}>
+      <img src={open ? assets.close_icon: assets.menu_icon} alt="" />
+     </button>
+
     </div>
   )
 }
