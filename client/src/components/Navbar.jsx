@@ -35,8 +35,18 @@ const Navbar = (setshowlogin) => {
      <button className='sm:hidden cursor-pointer' aria-label="menu" onClick={()=>setOpen(!open)}>
       <img src={open ? assets.close_icon: assets.menu_icon} alt="" />
      </button>
+  
+  {/* not yet */}
+    <div>
+    <form action="">
+
+    </form>
+    </div>
+{/* not yet */}
 
     </div>
+
+    
   )
 }
 
