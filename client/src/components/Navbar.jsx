@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { assets, menuLinks } from '../assets/assets';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-const Navbar = (setshowlogin) => {
+const Navbar = (setShowLogin) => {
 
   const location = useLocation();
   const[open,setOpen]=useState(false)
@@ -27,7 +27,7 @@ const Navbar = (setshowlogin) => {
 
       <div className='flex gap-7'>
         <button  onClick={()=>navigate('/owner')} className='cursor-pointer'>Dashboard</button>
-        <button  onClick={()=>setshowlogin(true)} type="button" class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2 text-center me-2 mb-2 mt-1.5">Login</button>
+        <button  onClick={()=>setShowLogin(true)} type="button" class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2 text-center me-2 mb-2 mt-1.5">Login</button>
       </div>
 
     </div>
