@@ -3,6 +3,8 @@ import Navbar from './components/Navbar'
 import { Route, Routes, useLocation } from 'react-router-dom';
 import Cardetails from './pages/Cardetails';
 import Mybooking from './pages/Mybooking';
+import Home from './pages/Home';
+import Cars from './pages/Cars';
 
 const App = () => {
 
